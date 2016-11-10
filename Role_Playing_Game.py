@@ -4,7 +4,6 @@ import time
 import random
 from Prabhjots_library import *
 from RPG_classes import *
-from Player import Player
 
 
 with open("ITEMS.txt", "r") as f:
@@ -15,8 +14,6 @@ for i in range(0, len(items)):
 print(items)
 
 new_page()
-
-
 
 
 def generate_players():
@@ -63,4 +60,9 @@ def game():
     dungeon = Floor()
 
 
-game()
+players_list[1].player_inventory.player_items.append(items[0])
+players_list[1].player_inventory.player_items.append(items[1])
+players_list[1].player_inventory.player_items.append(items[2])
+players_list[1].player_inventory.player_items.append(items[3])
+
+players_list[1].player_inventory.display_items()
