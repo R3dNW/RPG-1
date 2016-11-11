@@ -1,17 +1,8 @@
 __author__ = 'prabh_000'
 
-import time
-import random
-from Prabhjots_library import *
-from RPG_classes import *
+from RPG_imports import *
 
 
-with open("ITEMS.txt", "r") as f:
-    file = f.read()
-items = file.split("\n")
-for i in range(0, len(items)):
-    items[i] = items[i].split(",")
-print(items)
 
 new_page()
 
@@ -46,7 +37,7 @@ def start():
     ui("[N] Any number to Play",
        "[L] Any letter to Quit")
     try:
-        next = ui_input("Pick a choice")
+        next = int(ui_input("Pick a choice"))
     except ValueError:
         ui("Too Scared? Goodbye")
         quit()
